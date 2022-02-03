@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Nav() {
+function Sidebar() {
   return <div></div>;
 }
 
-export default Nav;
+export default Sidebar;
