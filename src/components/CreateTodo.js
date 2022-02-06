@@ -2,9 +2,11 @@ import React from 'react';
 
 function CreateTodo() {
   return (
-  <div id="createContainer">
-    <div className="create">
-        
+  <div id="createTodoContainer">
+    <div className="submitTodoContainer">
+        <input type='text' />
+        <select></select>
+        <input type='submit' />
     </div>
   </div>
   );
