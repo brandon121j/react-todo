@@ -6,7 +6,6 @@ function ShowTodos(todos) {
 			return <div>{todo[i]}</div>;
 		}
 	};
-	return <div></div>;
 }
 
 export default ShowTodos;
