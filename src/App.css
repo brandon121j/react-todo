@@ -1,4 +1,15 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
+.navContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  /* width: 100%; */
+}
+
+.navItem {
+
+}
