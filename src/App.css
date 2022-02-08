@@ -5,11 +5,20 @@
 
 .navContainer {
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+}
+
+.navLeft {
+  position: relative;
+  float: left;
+
   /* width: 100%; */
 }
 
-.navItem {
+.navright {
+  position: relative;
+  float: right;
 
 }
