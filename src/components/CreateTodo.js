@@ -6,7 +6,7 @@ function CreateTodo() {
     <div className="submitTodoContainer">
         <input type='text' />
         <select></select>
-        <input type='submit' />
+        <input class="btn btn-outline-primary" type='submit' />
     </div>
   </div>
   );

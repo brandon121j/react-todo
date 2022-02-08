@@ -1,11 +1,10 @@
 import React from 'react';
 
-function ShowTodos(todos) {
-	const todoShower = (todo) => {
-		for (let i = 0; i < todo.length; i++) {
-			return <div>{todo[i]}</div>;
-		}
-	};
+function ShowTodos() {
+  return <div></div>;
 }
 
 export default ShowTodos;
+
+
+

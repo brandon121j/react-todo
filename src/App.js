@@ -1,9 +1,16 @@
+import CreateTodo from './components/CreateTodo';
+import Nav from './components/Nav';
+import ShowTodos from './components/ShowTodos';
+// import Sidebar from './components/Sidebar'
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Working</h1>
+      <Nav />
+      <CreateTodo />
+      <ShowTodos />
     </div>
   );
 }
