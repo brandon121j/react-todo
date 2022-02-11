@@ -5,13 +5,9 @@ import '../App.css';
 function Nav() {
 	return (
 		<div className="navbar navbar-expand-lg navbar-light bg-light">
-    <div className='navContainer'>
-			<div className="navLeft">
+    <div id='navContainer'>
 					<h1>Todo List</h1>
-			</div>
-      <div className='navRight'>
-					<GoThreeBars size={40}/>
-        </div>
+					<GoThreeBars size={40} id='hamburgerMenu'/>
 		</div>
     </div>
 	);

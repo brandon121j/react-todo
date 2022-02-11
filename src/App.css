@@ -3,22 +3,29 @@
   width: 100%;
 }
 
-.navContainer {
+#navContainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 15px;
+  padding: 5px;
 }
 
-.navLeft {
-  position: relative;
-  float: left;
-
-  /* width: 100%; */
+#hamburgerMenu {
+  cursor: pointer;
 }
 
-.navright {
-  position: relative;
-  float: right;
-
+#createTodoContainer {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
 }
+
+#createTodoForm {
+  display: flex;
+  justify-content: center;
+}
+
+.todoCreatorInput {
+  cursor: pointer;
+}
+
