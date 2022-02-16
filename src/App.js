@@ -2,7 +2,6 @@ import CreateTodo from './components/CreateTodo';
 import Nav from './components/Nav';
 import ShowTodos from './components/ShowTodos';
 // import Sidebar from './components/Sidebar'
-import { useEffect, useState } from 'react';
 import './App.css';
 
 

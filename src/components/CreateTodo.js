@@ -1,26 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import TodoHooks from '../hooks/TodoHooks';
 
-function CreateTodo(props) {
-	const {setLow, setMed, setHigh} = props;
+function CreateTodo() {
+	const [todo, setTodo] = useState("");
+	const [state, dispatch, allTodos] = TodoHooks();
 
-	console.log(setLow)
+	const onSubmitHandler = (e) => {
+		e.preventDefault();
+		const selectValue = (`'${e.target[1].value}'`);
+		dispatch({ type: selectValue });
+		console.log(selectValue);
+		// console.log(allTodos);
+	}
+
 	return (
 		<div id="createTodoContainer">
-			<form id="createTodoForm">
+			<form id="createTodoForm" onSubmit={(e) => onSubmitHandler(e)}>
 				<input
 					type="text"
 					placeholder="Input Todo"
 					className="createTodoInput"
-
+					onChange={(e) => setTodo(e.target.value)}
 				/>
 				<select
 					className="createTodoInput"
-					onChange={(e) => console.log(e.target.value)}
+					// onChange={(e) => console.log(e.target.value)}
 					defaultValue={null}
 				>
-					<option value={null}>Priority Level</option>
+					<option>Priority Level</option>
 					<option value="high">High</option>
-					<option value="medium">Medium</option>
+					<option value="med">Medium</option>
 					<option value="low">Low</option>
 				</select>
 				<button
