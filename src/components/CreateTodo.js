@@ -1,6 +1,9 @@
 import React from 'react';
 
-function CreateTodo() {
+function CreateTodo(props) {
+	const {setLow, setMed, setHigh} = props;
+
+	console.log(setLow)
 	return (
 		<div id="createTodoContainer">
 			<form id="createTodoForm">
@@ -8,6 +11,7 @@ function CreateTodo() {
 					type="text"
 					placeholder="Input Todo"
 					className="createTodoInput"
+
 				/>
 				<select
 					className="createTodoInput"
