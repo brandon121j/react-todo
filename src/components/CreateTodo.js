@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TodoHooks from '../hooks/TodoHooks';
 
 function CreateTodo() {
-	const [todo, setTodo] = useState("");
 	const [state, dispatch, allTodos] = TodoHooks();
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
-		const selectValue = (`'${e.target[1].value}'`);
-		dispatch({ type: selectValue });
-		console.log(selectValue);
+		let selectValue = e.target[1].value;
+		let todo = e.target[0].value;
+		dispatch({ type: selectValue, payload: [...state.lowPriority, todo] });
+		// console.log(allTodos)
+		// console.log(selectValue);
 		// console.log(allTodos);
 	}
 
@@ -20,7 +21,6 @@ function CreateTodo() {
 					type="text"
 					placeholder="Input Todo"
 					className="createTodoInput"
-					onChange={(e) => setTodo(e.target.value)}
 				/>
 				<select
 					className="createTodoInput"

@@ -1,38 +1,41 @@
 import { useReducer, useEffect } from 'react';
 
 function TodoHooks() {
-	const todoPriority = {
-		low: [],
-		med: [],
-		high: [],
+	let todoPriority = {
+		lowPriority: [],
+		medPriority: [],
+		highPriority: []
 	};
 
-	const { low, med, high } = todoPriority;
 
-	const todoReducer = (state, action) => {
-		switch (state.type) {
-			case 'low':
-				return console.log('Working!!!!');
+	function todoReducer(state, action) {
+		switch (action.type) {
+            case 'low': 
+                    return {
+                        ...state, lowPriority: action.payload
+                    }
 			case 'med':
-				return console.log('MEDIUM');
+				return {
+                    ...state, medPriority: action.payload
+                }
 			case 'high':
-				return console.log('HIGH');
-			// return {
-			//     ...state,
-			//     low: [...state.low, action.payload],
-			// }
+				return {
+                    ...state, highPriority: action.payload
+                }
 			default:
-				return console.log('default');
+				return state;
 		}
 	};
 
 	const [state, dispatch] = useReducer(todoReducer, todoPriority);
 
-	useEffect(() => {
-		  console.log('!!!!!!!!')
-	}, [state]);
+    const { lowPriority: low, medPriority: med, highPriority: high } = state;
 
-	let allTodos = [...high, ...med, ...low];
+    let allTodos = [...high, ...med, ...low];
+
+    // useEffect(() => {
+    //     console.log('allTodos: ', allTodos)
+    // }, [allTodos])
 
 	return [state, dispatch, allTodos];
 };
