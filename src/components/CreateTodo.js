@@ -3,13 +3,13 @@ import TodoHooks from '../hooks/TodoHooks';
 
 function CreateTodo() {
 	const [state, dispatch, allTodos] = TodoHooks();
-
+    
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
-		let selectValue = e.target[1].value;
+		let priority = e.target[1].value;
 		let todo = e.target[0].value;
-		dispatch({ type: selectValue, payload: [...state.lowPriority, todo] });
-		// console.log(allTodos)
+		dispatch({ type: priority, payload: todo });
+		console.log(allTodos);
 		// console.log(selectValue);
 		// console.log(allTodos);
 	}
