@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from 'react';
+import { useReducer } from 'react';
 
 function TodoHooks() {
 	let todoPriority = {
@@ -29,9 +29,7 @@ function TodoHooks() {
 
 	const [todos, dispatch] = useReducer(todoReducer, todoPriority);
 
-    const { lowPriority: low, medPriority: med, highPriority: high } = todos;
-
-	return [todos, dispatch, low, med, high];
+	return [todos, dispatch];
 };
 
 export default TodoHooks;

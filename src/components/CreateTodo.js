@@ -1,17 +1,12 @@
 import React from 'react';
-import TodoHooks from '../hooks/TodoHooks';
 
-function CreateTodo() {
-	const [state, dispatch, allTodos] = TodoHooks();
+function CreateTodo({dispatch}) {
     
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
 		let priority = e.target[1].value;
 		let todo = e.target[0].value;
 		dispatch({ type: priority, payload: todo });
-		console.log(allTodos);
-		// console.log(selectValue);
-		// console.log(allTodos);
 	}
 
 	return (
@@ -24,7 +19,6 @@ function CreateTodo() {
 				/>
 				<select
 					className="createTodoInput"
-					// onChange={(e) => console.log(e.target.value)}
 					defaultValue={null}
 				>
 					<option>Priority Level</option>
