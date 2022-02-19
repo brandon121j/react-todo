@@ -7,7 +7,7 @@ import './App.css';
 
 
 function App() {
-  const [todos, dispatch, low, med, high] = TodoHooks();
+  const [todos, dispatch] = TodoHooks();
 
 
 
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Nav />
       <CreateTodo dispatch={dispatch}/>
-      <ShowTodos />
+      <ShowTodos todos={todos}/>
     </div>
   );
 }

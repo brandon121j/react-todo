@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
-import TodoHooks from '../hooks/TodoHooks';
 
-function ShowTodos() {
-	const [todos, ,low, med, high] = TodoHooks();
+function ShowTodos({todos}) {
+
+	const { lowPriority: low, medPriority: med, highPriority: high } = todos;
 
 	useEffect(() => {
 		console.log('SHOWTODOS: ', todos)
-	}, [todos])
-	
+	}, [todos]);
+
 	return (
 		<div className="d-flex justify-content-center text-center rounded m-5">
 			<div className="card w-25">
