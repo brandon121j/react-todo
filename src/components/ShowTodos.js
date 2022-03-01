@@ -1,12 +1,9 @@
-import React, {useEffect} from 'react';
+import React, { useContext } from 'react';
+import { TodoContext } from '../context/TodoContext';
 
-function ShowTodos({todos}) {
-
+function ShowTodos() {
+	const {todos} = useContext(TodoContext)
 	const { lowPriority: low, medPriority: med, highPriority: high } = todos;
-
-	useEffect(() => {
-		console.log('SHOWTODOS: ', todos)
-	}, [todos]);
 
 	return (
 		<div className="d-flex justify-content-center text-center rounded m-5">

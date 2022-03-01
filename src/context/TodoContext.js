@@ -1,6 +1,10 @@
-import { useReducer } from 'react';
+import React, { useReducer } from 'react';
 
-function TodoHooks() {
+export const TodoContext = React.createContext();
+
+export const TodoHooks = (props) => {
+    const { children } = props;
+
 	let todoPriority = {
 		lowPriority: [],
 		medPriority: [],
@@ -8,7 +12,7 @@ function TodoHooks() {
 	};
 
 
-	function todoReducer(state, action) {
+	const todoReducer = (state, action) => {
 		switch (action.type) {
             case 'low': 
                     return {
@@ -29,7 +33,12 @@ function TodoHooks() {
 
 	const [todos, dispatch] = useReducer(todoReducer, todoPriority);
 
-	return [todos, dispatch];
+	return (
+        <TodoContext.Provider
+            value={{todos, dispatch}}
+        >
+            {children}
+        </TodoContext.Provider>
+    )
 };
 
-export default TodoHooks;

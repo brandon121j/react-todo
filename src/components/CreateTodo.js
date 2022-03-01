@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TodoContext } from '../context/TodoContext';
 
-function CreateTodo({dispatch}) {
-    
+function CreateTodo() {
+	const {dispatch} = useContext(TodoContext)
+
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
 		let priority = e.target[1].value;
 		let todo = e.target[0].value;
+
+		// todo.length === 0 || priority === false ? 
 		dispatch({ type: priority, payload: todo });
 	}
+
 
 	return (
 		<div id="createTodoContainer">
@@ -21,7 +26,7 @@ function CreateTodo({dispatch}) {
 					className="createTodoInput"
 					defaultValue={null}
 				>
-					<option>Priority Level</option>
+					<option value={false}>Priority Level</option>
 					<option value="high">High</option>
 					<option value="med">Medium</option>
 					<option value="low">Low</option>
