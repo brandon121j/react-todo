@@ -24,12 +24,10 @@ function CreateTodo() {
 				/>
 				<select
 					className="createTodoInput"
-					defaultValue={null}
 				>
-					<option value={false}>Priority Level</option>
-					<option value="high">High</option>
-					<option value="med">Medium</option>
-					<option value="low">Low</option>
+					<option value="high">High Priority</option>
+					<option value="med">Medium Priority</option>
+					<option value="low">Low Priority</option>
 				</select>
 				<button
 					className="btn btn-outline-primary createTodoInput"

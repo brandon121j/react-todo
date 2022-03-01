@@ -29,3 +29,22 @@
   cursor: pointer;
 }
 
+.todoUl {
+  list-style: none;
+  min-height: 650px;
+}
+
+.highPriority {
+  cursor: pointer;
+  color: red;
+}
+
+.medPriority {
+  cursor: pointer;
+  color: yellow;
+}
+
+.lowPriority {
+  cursor: pointer;
+  color: green;
+}

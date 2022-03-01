@@ -9,16 +9,15 @@ function ShowTodos() {
 		<div className="d-flex justify-content-center text-center rounded m-5">
 			<div className="card w-25">
 				<div className="card body">
-					<ul className='todoUL'>
-						{high.map((todo) => {
-							return <li className="highPriority">{todo}</li>;
+					<ul className='todoUl'>
+						{high.map((todo, index) => {
+							return <li className="highPriority" key={index}>{todo}</li>;
 						})}
-						<h1>{low}</h1>
-						{med.map((todo) => {
-							return <li className="medPriority">{todo}</li>;
+						{med.map((todo, index) => {
+							return <li className="medPriority" key={index}>{todo}</li>;
 						})}
-						{low.map((todo) => {
-							return <li className="lowPriority">{todo}</li>;
+						{low.map((todo, index) => {
+							return <li className="lowPriority" key={index}>{todo}</li>;
 						})}
 					</ul>
 				</div>
